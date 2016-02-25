@@ -1,0 +1,6 @@
+res
+gen
+bin
+.idea
+target
+*.iml
