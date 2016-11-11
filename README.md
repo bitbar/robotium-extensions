@@ -1,6 +1,6 @@
 # Robotium Extensions
 
-Extension of robotium-solo library. ExtSolo extends Solo class and makes testing easier.
+Extension of robotium-solo library. <a href="http://bitbar.com/robotium-extsolo-library-is-now-open-source/">Robotium ExtSolo</a> extends Solo class and makes testing easier.
 ExtSolo is reporting executed steps to file metadata.json under /sdcard/test-screenshots 
 when test is executed in Testdroid Cloud
 
