@@ -67,10 +67,8 @@ class OtherUtils {
     OtherUtils(ExtSolo extSolo, String className, String methodName) {
         mMetadataConnected = extSolo.getInstrumentation()
                 .getTargetContext()
-                .bindService(
-                        new Intent(
-                                "com.bitbar.testdroid.monitor.MetadataService"),
-                        mConnection, Context.BIND_AUTO_CREATE);
+                .bindService(new Intent("com.bitbar.testdroid.monitor.MetadataService")
+                        .setPackage("com.bitbar.testdroid.monitor"), mConnection, Context.BIND_AUTO_CREATE);
 
         //set needed variables
         this.extSolo = extSolo;
@@ -376,7 +374,8 @@ class OtherUtils {
             }, 0, 5000);
             //we need to send intent in case test is launched in cloud and monitor set own location
             //to avoid interfere those two gps timers
-            Intent gpsMockMonitorIntent = new Intent("com.bitbar.testdroid.monitor.START_MOCK_GPS");
+            Intent gpsMockMonitorIntent = new Intent("com.bitbar.testdroid.monitor.START_MOCK_GPS")
+                    .setPackage("com.bitbar.testdroid.monitor");
             gpsMockMonitorIntent.putExtra("latitude", Double.toString(latitude));
             gpsMockMonitorIntent.putExtra("longitude", Double.toString(longitude));
             gpsMockMonitorIntent.putExtra("elevation", Double.toString(altitude));
@@ -396,7 +395,8 @@ class OtherUtils {
             locationManager.clearTestProviderEnabled(LocationManager.GPS_PROVIDER);
 
             //we need to also reset our mock location in monitor to revive default settings
-            Intent gpsMockMonitorIntent = new Intent("com.bitbar.testdroid.monitor.STOP_MOCK_GPS");
+            Intent gpsMockMonitorIntent = new Intent("com.bitbar.testdroid.monitor.STOP_MOCK_GPS")
+                    .setPackage("com.bitbar.testdroid.monitor");
             extSolo.getInstrumentation().getContext().sendBroadcast(gpsMockMonitorIntent);
         }
     }
@@ -460,6 +460,7 @@ class OtherUtils {
             // let know monitoring about programmatic turning on/off wifi
             Intent intent = new Intent();
             intent.setAction("com.bitbar.testdroid.monitor.TURN_WIFI");
+            intent.setPackage("com.bitbar.testdroid.monitor");
             intent.putExtra("enabled", enabled);
             extSolo.getInstrumentation().getTargetContext().sendBroadcast(intent);
         } catch (Exception ignored) {

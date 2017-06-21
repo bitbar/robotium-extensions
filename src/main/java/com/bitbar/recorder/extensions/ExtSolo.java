@@ -8,9 +8,9 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.*;
 import com.bitbar.recorder.extensions.OtherUtils.Type;
-import com.jayway.android.robotium.solo.By;
-import com.jayway.android.robotium.solo.Solo;
-import com.jayway.android.robotium.solo.WebElement;
+import com.robotium.solo.By;
+import com.robotium.solo.Solo;
+import com.robotium.solo.WebElement;
 
 import java.io.IOException;
 import java.lang.reflect.Field;
@@ -123,8 +123,7 @@ public class ExtSolo extends Solo {
      *                   </pre>
      * @since 2.7
      */
-    public ExtSolo(Instrumentation inst, Activity activity, String className,
-                   String methodName) {
+    public ExtSolo(Instrumentation inst, Activity activity, String className, String methodName) {
         super(inst, activity);
         this.inst = inst;
         htmlUtils = new HtmlUtils(this, className, methodName);
@@ -164,9 +163,7 @@ public class ExtSolo extends Solo {
      */
     @Override
     public void assertCurrentActivity(String message, String name) {
-        otherUtils.addAction(
-                String.format(Messages.ASSERT_CURRENT_ACTIVITY, name),
-                Type.assertion);
+        otherUtils.addAction(String.format(Messages.ASSERT_CURRENT_ACTIVITY, name), Type.assertion);
         super.assertCurrentActivity(message, name);
         otherUtils.addDurationToAction();
     }
@@ -207,10 +204,8 @@ public class ExtSolo extends Solo {
             otherUtils.addAction(
                     String.format(Messages.CHANGE_LANGUAGE_TO_ONE_PARAM, locale.getDisplayLanguage()), Type.config);
         } else {
-            otherUtils.addAction(String.format(
-                            Messages.CHANGE_LANGUAGE_TO_TWO_PARAMS,
-                            locale.getDisplayLanguage(), locale.getDisplayCountry()),
-                    Type.config);
+            otherUtils.addAction(String.format(Messages.CHANGE_LANGUAGE_TO_TWO_PARAMS, locale.getDisplayLanguage(),
+                            locale.getDisplayCountry()), Type.config);
         }
         otherUtils.changeDeviceLanguage(locale);
         otherUtils.addDurationToAction();
@@ -1458,7 +1453,7 @@ public class ExtSolo extends Solo {
      * @since 2.5
      * @deprecated it's better to use {@link #clickOnWebElement(By by)}
      */
-    public void clickOnHtmlElement(String tag, String id, String name,                                   String className, int index) {
+    public void clickOnHtmlElement(String tag, String id, String name, String className, int index) {
         otherUtils.addAction(String.format(Messages.CLICK_ON_HTML_ELEMENT_TAG, tag, id, name, className), Type.click);
         htmlUtils.clickOnHtmlElement(tag, id, name, className, index < 0 ? 0 : index, null, null, null);
         otherUtils.addDurationToAction();
@@ -1489,8 +1484,8 @@ public class ExtSolo extends Solo {
      * @since 2.5
      * @deprecated it's better to use {@link #clickOnWebElement(By by)}
      */
-    public void clickOnHtmlElement(String tag, String id, String name,
-                                   String className, int index, Map<String, String> customAttributes) {
+    public void clickOnHtmlElement(
+            String tag, String id, String name, String className, int index, Map<String, String> customAttributes) {
         otherUtils.addAction(String.format(Messages.CLICK_ON_HTML_ELEMENT_TAG, tag, id, name, className), Type.click);
         htmlUtils.clickOnHtmlElement(tag, id, name, className, index < 0 ? 0 : index, null, customAttributes, null);
         otherUtils.addDurationToAction();
@@ -2082,10 +2077,9 @@ public class ExtSolo extends Solo {
      * @deprecated it's better to use {@link #waitForWebElement(By by)}
      */
     public boolean elementExistsOnHtmlPageByCssSelector(String cssSelector, int index) {
-        otherUtils.addAction(
-                String.format(Messages.ELEMENT_EXISTS_ON_HTML_PAGE_BY_CSS_SELECTOR, cssSelector, index),
+        otherUtils.addAction(String.format(Messages.ELEMENT_EXISTS_ON_HTML_PAGE_BY_CSS_SELECTOR, cssSelector, index),
                 Type.assertion);
-        boolean result = htmlUtils.elementExistsOnHtmlPage(null, null, null,                null, index, null, null, cssSelector);
+        boolean result = htmlUtils.elementExistsOnHtmlPage(null, null, null, null, index, null, null, cssSelector);
         otherUtils.addDurationToAction();
         return result;
     }
@@ -2130,8 +2124,7 @@ public class ExtSolo extends Solo {
      */
     @Override
     public void enterText(int index, String text) {
-        otherUtils.addAction(String.format(Messages.ENTER_TEXT, text),
-                Type.input);
+        otherUtils.addAction(String.format(Messages.ENTER_TEXT, text), Type.input);
         View view = super.getView(EditText.class, index);
 
         if (view instanceof AutoCompleteTextView) {

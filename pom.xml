@@ -4,7 +4,7 @@
 
     <groupId>com.testdroid</groupId>
     <artifactId>robotium-extensions</artifactId>
-    <version>1.0.0</version>
+    <version>5.3.2</version>
     <packaging>apk</packaging>
 
     <name>robotium-extensions</name>
@@ -13,7 +13,7 @@
     <parent>
         <groupId>com.jayway.android.robotium</groupId>
         <artifactId>robotium</artifactId>
-        <version>4.3</version>
+        <version>5.6.3</version>
     </parent>
 
     <properties>
