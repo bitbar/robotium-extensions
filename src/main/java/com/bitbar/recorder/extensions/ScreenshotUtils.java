@@ -36,11 +36,12 @@ class ScreenshotUtils {
             mBound = true;
         }
     };
-    
+
     ScreenshotUtils(ExtSolo extSolo) {
         this.extSolo = extSolo;
         extSolo.getInstrumentation().getTargetContext().bindService(
-                new Intent("com.bitbar.testdroid.monitor.ScreenshotService"), mConnection, Context.BIND_AUTO_CREATE);
+                new Intent("com.bitbar.testdroid.monitor.ScreenshotService").setPackage("com.bitbar.testdroid.monitor"),
+                mConnection, Context.BIND_AUTO_CREATE);
     }
     
     public void tearDown() {

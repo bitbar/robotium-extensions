@@ -11,9 +11,6 @@ public class Messages {
     public static final String CLICK_IN_LIST = "Click in list (line: %d)";
     public static final String CLICK_IN_LIST_WITH_TEXT = "Click in list \"%s\" (line: %d)";
     public static final String CLICK_LONG_ON_SCREEN = "Click long on screen: (%d, %d)";
-    public static final String CLICK_LONG_ON_TEXT = "Click long on \"%s\"";
-    public static final String CLICK_LONG_ON_VIEW = "Click long on %s";
-    public static final String CLICK_ON_BUTTON = "Click on button \"%s\"";
     public static final String CLICK_ON_HTML_ELEMENT_BY_CSS_SELECTOR = "Click on html element: %s with index %s";
     public static final String CLICK_ON_HTML_ELEMENT_TAG = "Click on html element <%s id='%s' name='%s' class='%s' />";
     public static final String CLICK_ON_HTML_ELEMENT_XPATH = "Click on html element, xPath: %s";
@@ -22,9 +19,6 @@ public class Messages {
     public static final String CLICK_ON_WEB_ELEMENT_5S = "Click on WebElement <%s id='%s' name='%s' class='%s' text='%s'/>";
     public static final String CLICK_ON_MENU_ITEM = "Click on menu item \"%s\"";
     public static final String CLICK_ON_SCREEN = "Click on screen: (%d, %d)";
-    public static final String CLICK_ON_TEXT = "Click on \"%s\"";
-    public static final String CLICK_ON_TOGGLE_BUTTON = "Click on toggle button \"%s\"";
-    public static final String CLICK_ON_VIEW = "Click on %s";
     public static final String CONNECTED_TO_SCREENSHOT_SERVICE = "Connected to monitor service. Taking screenshot using ScreenshotService";
     public static final String COULDNT_CALL_SCREENSHOT_SERVICE_METHOD = "Couldn't call remote method to ScreenshotService.";
     public static final String CURRENT_LOCALE = "Current locale: %s";
@@ -53,8 +47,6 @@ public class Messages {
     public static final String INJECT_JAVASCRIPT_CODE = "inject JavaScript code";
     public static final String INJECT_JAVASCRIPT_FILE = "Inject JavaScript file";
     public static final String IS_TEXT_PRESENT_ON_HTML_PAGE = "Is \"%s\" present on html page";
-    public static final String JSI_DOESNT_EXIST = "JSI doesn't exist and couldn't be loaded";
-    public static final String LOADING_JQUERY = "Loading jQuery";
     public static final String LOG_INFO_IN_LOGCAT = "Log info in LogCat, tag: \"%s\", msg: \"%s\"";
     public static final String METADATA_SERVICE_ERROR_ADD_ACTION = "Couldn't call remote method (addAction) to MetadataService.";
     public static final String METADATA_SERVICE_ERROR_ADD_DURATION = "Couldn't call remote method (addDurationToAction) to MetadataService.";
@@ -70,8 +62,6 @@ public class Messages {
     public static final String NUMBER_OF_HTML_ELEMENTS_BY_CSS_SELECTOR = "Number of elements on html page: %s";
     public static final String NUMBER_OF_HTML_ELEMENTS_TAG = "Number of elements on html page <%s id='%s' name='%s' class='%s' />";
     public static final String NUMBER_OF_HTML_ELEMENTS_XPATH = "Number of elements on html page, xPath: %s";
-    public static final String PROBLEM_BY_CLOSING_JQUERY_RB = "Problem by closing jQuery read buffer";
-    public static final String PROBLEM_BY_READIG_JQUERY = "Problem by reading jQuery";
     public static final String SCREENSHOT_DRAWING_CACHE_NULL = "Screenshot couldn't be taken. Drawing cache from view is null.";
     public static final String SCREENSHOT_JOB_NOTIFIED = "Screenshot job notified";
     public static final String SCREENSHOT_JOB_WOKE_UP = "Screenshot job woke up";
